@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F 
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
-from utils.plotimp import set_plot_props
+from utils import plotimp
 from gen_data.gp1d import GP1D
 import matplotlib.pyplot as plt 
 import numpy as np
@@ -131,7 +131,6 @@ if __name__ == "__main__":
     with torch.no_grad():
         sampled_y = model.decoder(z)
 
-    set_plot_props()
     fig = plt.figure()
     ax = fig.add_subplot(111)
     for no, y in enumerate(sampled_y):

@@ -111,7 +111,7 @@ if __name__ == "__main__":
 
     print(device)
     ###### running for 200 epochs
-    t = trange(200)
+    t = trange(2000)
     for e in t:
         # set training mode
         model.train()
