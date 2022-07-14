@@ -1,1 +1,17 @@
-[y/N]: 
+name: pi-vae
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pytorch
+  - cmdstanpy
+  - pandas
+  - scikit-learn
+  - seaborn
+  - tqdm
+  - jupyterlab
+  - conda-lock
+platforms:
+  - osx-arm64
+  - linux-64
+  - osx-64

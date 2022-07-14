@@ -139,7 +139,7 @@ if __name__ == "__main__":
     ax.set_ylabel('$y=f(x)$')
     ax.set_title('5 different function realizations at fixed 100 points\n'
     'sampled from a VAE learned with prior as GP (RBF)')
-    plt.savefig('sample_prior_vae_1d_fixed.pdf')
+    plt.savefig('plots/sample_prior_vae_1d_fixed.pdf')
 
 
     ###### Inference on observed data
@@ -179,4 +179,4 @@ if __name__ == "__main__":
     ax.set_ylabel('$y=f(x)$')
     ax.set_title('Inference fit')
     ax.legend()
-    plt.savefig('sample_inference_vae_1d_fixed.pdf')
+    plt.savefig('plots/sample_inference_vae_1d_fixed.pdf')
