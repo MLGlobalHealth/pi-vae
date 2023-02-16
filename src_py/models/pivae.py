@@ -16,6 +16,8 @@ from utils import plotimp
 from gen_data.gp1d import GP1D
 import matplotlib.pyplot as plt
 
+import pickle
+
 from tqdm import tqdm, trange
 
 import math
@@ -128,3 +130,5 @@ if __name__ == "__main__":
             total_loss += loss.item() 
             optimizer.step() # update the weights
         t.set_description(f'Loss is {total_loss/(n_evals*n_samples):.3}')
+    
+    pickle.dump(model, open("model.pkl", "wb") )
