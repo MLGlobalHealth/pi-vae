@@ -42,8 +42,9 @@ class PHI(nn.Module):
         self.in_features = in_features
 
         # initialize alpha
-        self.alpha = Parameter(torch.tensor(alpha)) # create a tensor out of alpha
-        self.alpha.requiresGrad = True # set requiresGrad to true!
+       # self.alpha = Parameter(torch.tensor(alpha)) # create a tensor out of alpha
+        print("here2")
+        #self.alpha.requiresGrad = True # set requiresGrad to true!
         # centers
         self.centers = Parameter(torch.randn(n_centers, in_features)) # create a tensor out of centers
         self.centers.requiresGrad = True # set requiresGrad to true!
@@ -57,7 +58,7 @@ class PHI(nn.Module):
         Forward pass of the function.
         Applies the function to the input elementwise.
         '''
-        rbf = torch.exp(-self.alpha * torch.cdist(x, self.centers).pow(2))
+        rbf = torch.exp(-1 * torch.cdist(x, self.centers).pow(2))
         hidden1 = torch.tanh(self.linear1(rbf))
         hidden2 = torch.tanh(self.linear2(hidden1))
         out = self.out(hidden2)
